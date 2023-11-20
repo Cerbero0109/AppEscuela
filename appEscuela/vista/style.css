@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,200&display=swap");
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  background-color: white;
+}
+
+#navDesignLogin {
+  background: rgb(20, 0, 118);
+  background: linear-gradient(
+    90deg,
+    rgb(228, 228, 235) 0%,
+    rgba(1, 6, 114, 1) 100%
+  );
+}
+
+#sBloqueLogin {
+  background: rgb(20, 0, 118);
+  background: radial-gradient(
+    circle,
+    rgb(64, 71, 205) 0%,
+    rgb(1, 6, 114) 100%
+  );
+}
+
+.bloqueInfo{
+  border-radius: 10px;
+}
+
+#pagDesign {
+  background-color: #eef3f4;
+}
+
+#pagDesign .card {
+  width: 380px;
+  border: none;
+  height: 60px;
+}
+
+#pagDesign .ratings i {
+  color: #cecece;
+  font-size: 32px;
+}
+
+#pagDesign .rating-color {
+  color: #fbc634 !important;
+}
+
+#pagDesign .review-count {
+  font-weight: 400;
+  margin-bottom: 2px;
+  font-size: 24px !important;
+}
+
+.color-navbar {
+  background-color: #58c2bf;
+}
+
+.pelis {
+  display: flex;
+}
+
+.button-margin {
+  margin-right: 61%;
+}
+
+
+.tamaño-logo {
+  height: 75px;
+}
+
+.tipo-letra h1 {
+  font-family: "Inter", sans-serif;
+}
+
+.color {
+  background-color: #e2e2ea;
+}
+
+
+/*Index page*/
+
+#modificarContenedor {
+  max-height: 300px; /* Ajusta esta altura según tus preferencias */
+  overflow-y: auto; /* Habilita el desplazamiento vertical cuando sea necesario */
+  border: 1px solid #ccc; /* Borde al contenedor */
+  padding: 10px; /* Espacio interno */
+}
+
+#ordenarLista ul{
+  display: inline-block;
+  margin-right: 10px; /* Espacio entre archivos */
+  border: 1px solid #ccc; /* Borde alrededor de cada archivo */
+  padding: 5px; /* Espacio interno para cada archivo */
+}
+
+/*horario page*/
+.horario{
+  background-color: #180382;
+}
