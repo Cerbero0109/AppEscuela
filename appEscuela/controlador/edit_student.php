@@ -21,9 +21,13 @@ include '../modelo/conexion.php';
         $edad = $_POST['edad'];
         $grado = $_POST['grado'];
 
+
+
+
         $query = "UPDATE estudiantes set nombre = '$nombre', apellidos = '$apellidos', edad = '$edad', grado = '$grado'
         WHERE id_estudiantes = $id";
         mysqli_query($conexion, $query);
+
         header("Location: ../vista/editar_alumno.php");
     }
 ?>

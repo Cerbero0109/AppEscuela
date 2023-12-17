@@ -17,7 +17,7 @@ $usuario_id = $_SESSION['id_login'];
 $query = "SELECT * FROM login WHERE id_login = '$usuario_id'";
 $resultado = mysqli_query($conexion, $query);
 $row = mysqli_fetch_array($resultado);
- 
+
 ?>
 <div class="d-flex align-items-center justify-content-center" style="min-height: 75vh;">
     <div class="container">
@@ -36,7 +36,7 @@ $row = mysqli_fetch_array($resultado);
                 <hr style="height: 5px; background-color: #333;">
                 <h3 class="text-center p-2">Información del Docente</h3>
                 <p class="lead"> <strong>Especialidad:</strong> <?php echo $row['especialidad'] ?></p>
-                <p class="lead"><strong>Área de interés:</strong> <?php echo $row['area_interes'] ?></p>
+                <p class="lead"><strong>Área de interés:</strong> <?php echo $row['usuario'] ?></p>
                 <p class="lead"><strong>Correo electrónico:</strong> <?php echo $row['correo'] ?></p>
 
                 <a href="controlador/logout_controlador.php" class="btn btn-danger">

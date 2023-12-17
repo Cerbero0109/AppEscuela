@@ -15,6 +15,18 @@ if(isset($_GET['id'])){
     }
 }
 
+
+session_start();  
+$usuario_id = $_SESSION['id_login'];
+$query = "SELECT usuario FROM login WHERE id_login = '$usuario_id'";
+$result = mysqli_query($conexion, $query);
+
+if ($result) {
+    $fila = mysqli_fetch_assoc($result);
+    if ($fila) {
+        $grado = $fila['usuario'];
+    }}
+
 $trim1 = "TRIMESTRE I";
 
 $trim2 = "TRIMESTRE II";
@@ -43,7 +55,7 @@ $trim3 = "TRIMESTRE III";
     <!--Seccion Tabla de Datos-->
     <div class="col-md-12">
         <div class="container p-2">
-        <a class="btn btn-warning text-white fw-bold" href="listado_materias.php">Regresar</a>
+            <a class="btn btn-warning text-white fw-bold" href="listado_materias.php">Regresar</a>
         </div>
         <table class="table table-bordered">
             <thead>
@@ -57,35 +69,39 @@ $trim3 = "TRIMESTRE III";
             </thead>
             <tbody>
                 <?php
-                        $query = "SELECT * FROM estudiantes";
-                        $resultado = mysqli_query($conexion,$query);
+    $query = "SELECT * FROM estudiantes WHERE grado ='$grado'";
+    $resultado = mysqli_query($conexion, $query);
 
-                        while($row = mysqli_fetch_array($resultado)){ ?>
+    while ($row = mysqli_fetch_array($resultado)) {
+    ?>
                 <tr>
                     <td><?php echo $row['id_estudiantes'] ?> </td>
-                    <td><?php echo $row['nombre'] ?> <?php echo $row['apellidos']?></td>
+                    <td><?php echo $row['nombre'] ?> <?php echo $row['apellidos'] ?></td>
                     <td>
-                        <a href="trimestre.php?id=<?php echo $row['id_estudiantes']?>&nombre_materia=<?php echo urlencode($nombre_materia);?>&trim1=<?php echo urlencode($trim1);?>" class="btn btn-secondary">
+                        <a href="trimestre.php?id=<?php echo $row['id_estudiantes'] ?>&nombre_materia=<?php echo urlencode($nombre_materia); ?>&trim1=<?php echo urlencode($trim1); ?>"
+                            class="btn btn-secondary" onclick="desactivarBoton(this)">
                             Registrar
                         </a>
                     </td>
                     <td>
-                        <a href="trimestre.php?id=<?php echo $row['id_estudiantes']?>&nombre_materia=<?php echo urlencode($nombre_materia);?>&trim2=<?php echo urlencode($trim2);?>" class="btn btn-secondary">
+                        <a href="trimestre.php?id=<?php echo $row['id_estudiantes'] ?>&nombre_materia=<?php echo urlencode($nombre_materia); ?>&trim2=<?php echo urlencode($trim2); ?>"
+                            class="btn btn-secondary" onclick="desactivarBoton(this)">
                             Registrar
                         </a>
                     </td>
                     <td>
-                    <a href="trimestre.php?id=<?php echo $row['id_estudiantes']?>&nombre_materia=<?php echo urlencode($nombre_materia);?>&trim3=<?php echo urlencode($trim3);?>" class="btn btn-secondary">
+                        <a href="trimestre.php?id=<?php echo $row['id_estudiantes'] ?>&nombre_materia=<?php echo urlencode($nombre_materia); ?>&trim3=<?php echo urlencode($trim3); ?>"
+                            class="btn btn-secondary" onclick="desactivarBoton(this)">
                             Registrar
                         </a>
                     </td>
-
                 </tr>
                 <?php } ?>
             </tbody>
         </table>
     </div>
 </div>
-    <?php
+
+<?php
 include ('footer.php');
 ?>

@@ -116,10 +116,11 @@ function imprimirValoresTrimestres() {
             <h5 class="mt-4 mb-3">Estado: <span id="estado"></span></h5>
 
             <input class="btn btn-success mt-3 mb-5" type="button" value="Calcular Promedio"
-                onclick="calcularPromedio()">
+            id="input1" onclick="habilitarInput2(); calcularPromedio()">
 
 
-            <input class="btn btn-warning mt-3 mb-5" type="submit" value="Registrar">                    
+
+            <input disabled class="btn btn-warning mt-3 mb-5" type="submit" value="Registrar" id="input2">                    
 
             <input type="hidden" name="promedio" id="promedio">
             <input type="hidden" name="estados" id="estados">
@@ -161,6 +162,12 @@ function calcularPromedio() {
 }
 </script>
 
+
+<script>
+  function habilitarInput2() {
+    document.getElementById("input2").disabled = false;
+  }
+</script>
 
 <script>
 function mostrarFecha() {

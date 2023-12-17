@@ -42,7 +42,8 @@
             <?php
             include "./modelo/conexion.php";
             
-            $query_login = "SELECT * FROM login";
+            $query_login = "SELECT * FROM login WHERE usuario != 'admin'";
+
             $result_login = mysqli_query($conexion, $query_login);
 
             while($log = mysqli_fetch_array($result_login)) { ?>

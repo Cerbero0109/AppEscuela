@@ -26,7 +26,7 @@ include '../controlador/edit_student.php';
                     </div>
                     <div class="form-group p-3">
                         <p>Grado del alumno: </p>
-                        <input type="text" name=grado value="<?php echo $grado;?>" class="form-control">
+                        <input disabled type="text" name=grado value="<?php echo $grado;?>" class="form-control">
                     </div>
                     <button  class="btn btn-success ms-3" name="update">Actualizar</button>
                 </form>

@@ -4,7 +4,7 @@ include 'navbarV.php';
 include '../modelo/conexion.php';
 ?>
 
-<div class="container-fluid mt-5 horario">
+<div class="container-fluid  horario">
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <h2 class="text-center mt-3 text-white mb-4">CREA TU HORARIO</h2>
